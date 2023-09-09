@@ -25,7 +25,7 @@
     font-size: 1.125rem;
 }
 
-.field input {
+.field input, .field select{
     display: block;
     width: 100%;
     margin-top: 0.5em;
@@ -40,6 +40,12 @@
     font-weight: 400;
     font-size: 1rem;
 
+    box-sizing: border-box;
+
+}
+
+.field select {
+    cursor: pointer;
 }
 
 .field input::placeholder {
