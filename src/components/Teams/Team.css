@@ -1,0 +1,28 @@
+.team {
+    padding: 2em;
+}
+
+.team__title {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.team__title h3 {
+    font-family: var(--titles-font);
+    font-weight: 400;
+    font-size: 2rem;
+
+    display: inline;
+    text-align: center;
+}
+
+.team__title hr {
+    width: 2em;
+    border: 2px solid;
+    border-radius: 1px;
+    display: block;
+    margin: auto;
+
+    margin-top: 0.5em;
+}

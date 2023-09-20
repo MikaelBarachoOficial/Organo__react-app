@@ -2,26 +2,26 @@ import './RegisterForm.css'
 import SelectionList from '../SelectionList/SelectionList'
 import { useState } from 'react'
 
-export const RegisterForm = () => {
+export const RegisterForm = (props) => {
 
-    const teams = [
-        'Programação',
-        'Front-End',
-        'Data Science',
-        'Devops',
-        'UX e Design',
-        'Mobile',
-        'Inovação e Gestão'
-    ]
+    const teams = props.teams
 
-    const [userName, setUserName] = useState('')
-    const [userJob, setUserJob] = useState('')
-    const [userImage, setUserImage] = useState('')
-    const [userTeam, setUserTeam] = useState(teams[0])
+    const [name, setName] = useState('')
+    const [job, setJob] = useState('')
+    const [image, setImage] = useState('')
+    const [team, setTeam] = useState(teams[0])
 
     const submitForm = event => {
         event.preventDefault()
-        console.log(userName, userJob, userImage, userTeam)
+
+        const collaborator = {
+            name,
+            job,
+            image,
+            team
+        }
+
+        props.addNewCollaborator(collaborator)
         
     }
 
@@ -31,17 +31,17 @@ export const RegisterForm = () => {
                 <h3>Preencha os dados para criar o card do colaborador.</h3>
 
                 <Field inputType='text' fieldName='Nome' placeholder='Digite seu nome' required={true}
-                    fieldValue={userName} setFieldValue={setUserName}
+                    fieldValue={name} setFieldValue={setName}
                 />
                 <Field inputType='text' fieldName='Cargo' placeholder='Digite seu cargo' required={true}
-                    fieldValue={userJob} setFieldValue={setUserJob}
+                    fieldValue={job} setFieldValue={setJob}
                 />
                 <Field inputType='text' fieldName='Imagem' placeholder='Informe o endereço da imagem'
-                    fieldValue={userImage} setFieldValue={setUserImage}
+                    fieldValue={image} setFieldValue={setImage}
                 />
                 
                 <SelectionList fieldName='Times' list={teams} required={true}
-                    fieldValue={userTeam} setFieldValue={setUserTeam}
+                    fieldValue={team} setFieldValue={setTeam}
                 />
 
                 <input className='submitBtn' type="submit" value='Criar card' />

@@ -17,12 +17,16 @@
     font-family: var(--titles-font);
     font-weight: 400;
     font-size: 2rem;
+
+    margin-top: 0.5em;
+    margin-bottom: 1em;
 }
 
 .field label {
     font-family: var(--text-font);
     font-weight: 600;
     font-size: 1.125rem;
+
 }
 
 .field input, .field select{
@@ -46,6 +50,8 @@
 
 .field select {
     cursor: pointer;
+    
+    
 }
 
 .field input::placeholder {
