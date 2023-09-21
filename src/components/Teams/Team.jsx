@@ -3,7 +3,7 @@ import './Team.css'
 
 export const Team = ({team, collaborators}) => {
     return (
-        <section className='team' style={{backgroundColor: team.backgroundColor}}>
+       collaborators.length > 0 && <section className='team' style={{backgroundColor: team.backgroundColor}}>
             <div className='team__title'>
                 <h3>{team.name}</h3>
                 <hr style={{borderColor: team.mainColor}}/>

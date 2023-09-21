@@ -5,4 +5,16 @@
 
 .banner img {
     max-width: 100%;
+    animation: bannerSlide 0.8s ease-in-out;
+}
+
+@keyframes bannerSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
 }
