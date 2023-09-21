@@ -18,11 +18,20 @@
 }
 
 .team__title hr {
-    width: 2em;
-    border: 2px solid;
+    width: 1.9em;
+    border: 3px solid;
     border-radius: 1px;
     display: block;
     margin: auto;
 
     margin-top: 0.5em;
+    margin-bottom: 2.7em;
+}
+
+.team__collaborators {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5em;
 }

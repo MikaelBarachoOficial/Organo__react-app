@@ -1,3 +1,4 @@
+import { Collaborator } from '../Collaborator/Collaborator.jsx'
 import './Team.css'
 
 export const Team = (props) => {
@@ -8,8 +9,9 @@ export const Team = (props) => {
                 <hr style={{borderColor: props.team.mainColor}}/>
             </div>
 
-            <div>
-                {/* Collaborators */}
+            <div className='team__collaborators'>
+                <Collaborator name='Mikael Baracho' job='Programador, Front-End, React.js' image='https://github.com/MikaelBarachoOficial.png' teamColor={props.team.mainColor} />
+                <Collaborator name='Andressa Sales' job='Programadora HTML, Copiadora de código' image='https://github.com/AndressaSales.png' teamColor={props.team.mainColor} />
             </div>
 
         </section>
