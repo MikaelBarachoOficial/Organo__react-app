@@ -1,3 +1,27 @@
+<img src="./.github/banner-preview.png" alt="Preview" style="max-width: 600px;">
+
+<h1 style="display: block; text-decoration: overline; margin: 0.5em 2em;">React App - Organo Project</h1>
+
+## 🚀 Technologies
+
+This project was developed using the following technologies:
+
+> - HTML and CSS
+> - JavaScript
+> - Git and Github
+> - Figma
+
+## 💻 Project
+
+Organo is a team organizer for company or independent projects.
+
+<div style="display: flex; gap: 80px; margin-bottom: 4em;">
+    <img src="./.github/form-preview.png" alt="Preview Form" style="max-height: 280px; border-radius: 4px">
+    <img src="./.github/teams-preview.png" alt="Preview Teams" style="max-height: 280px; border-radius: 4px">
+</div>
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
