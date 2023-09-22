@@ -21,6 +21,11 @@ export const RegisterForm = (props) => {
             team
         }
 
+        setName('')
+        setJob('')
+        setImage('')
+        setTeam(teams[0])
+
         props.addNewCollaborator(collaborator)
         
     }

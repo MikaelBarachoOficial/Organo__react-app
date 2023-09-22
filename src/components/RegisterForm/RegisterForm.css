@@ -96,3 +96,13 @@
 .field .submitBtn:hover {
     background-color:#4f68f0;
 }
+
+@media screen and (max-width: 744px) {
+    .form {
+        margin: 4em 1em;
+    }
+
+    .field {
+        width: 90%;
+    }
+}

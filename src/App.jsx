@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Banner from './components/Banner';
 import RegisterForm from './components/RegisterForm';
 import Team from './components/Teams'
+import Footer from './components/Footer';
 
 function App() {
 
@@ -47,7 +48,6 @@ function App() {
 
   const onCollaboratorRegistered = (collaborator) => {
     setCollaborators([...collaborators, collaborator])
-    console.log(collaborator)
   }
 
   return (
@@ -58,6 +58,7 @@ function App() {
 
       { teams.map((team, index) => <Team key={index} team={team} collaborators={collaborators.filter(collaborator => collaborator.team === team.name)} />)}
 
+      <Footer />
     </div>
   )
 }

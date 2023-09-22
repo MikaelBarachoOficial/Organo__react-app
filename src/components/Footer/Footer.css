@@ -1,0 +1,34 @@
+footer {
+    background: var(--main-color) url(/public/images/background.png) no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 3em;
+
+    padding: 3em 0;
+}
+
+footer .social-icons {
+    display: flex;
+    gap: 3em;
+}
+
+footer p {
+    color: #FFF;
+}
+
+footer .social-icons a img {
+    transition: transform 0.2s; /* Animation */
+}
+  
+footer .social-icons a img:hover {
+    transform: scale(1.3);
+}
+
+@media screen and (max-width: 509px) {
+    footer {
+         flex-direction: column-reverse;
+    }
+}
