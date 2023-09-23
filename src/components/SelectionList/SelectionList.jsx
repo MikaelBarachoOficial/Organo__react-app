@@ -1,3 +1,5 @@
+import './SelectionList.css'
+
 const SelectionList = (props) => {
 
     const list = props.list

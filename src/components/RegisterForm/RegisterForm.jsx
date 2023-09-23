@@ -1,6 +1,7 @@
 import './RegisterForm.css'
 import SelectionList from '../SelectionList/SelectionList'
 import { useState } from 'react'
+import { TextField } from '../TextField/TextField'
 
 export const RegisterForm = (props) => {
 
@@ -31,40 +32,28 @@ export const RegisterForm = (props) => {
     }
 
     return (
-        <section className="form">
-            <form className='field' onSubmit={submitForm}>
-                <h3>Preencha os dados para criar o card do colaborador.</h3>
+            <section className="form">
+                <form className='field' onSubmit={submitForm}>
+                    <h3>Preencha os dados para criar o card do colaborador.</h3>
 
-                <Field inputType='text' fieldName='Nome' placeholder='Digite seu nome' required={true}
-                    fieldValue={name} setFieldValue={setName}
-                />
-                <Field inputType='text' fieldName='Cargo' placeholder='Digite seu cargo' required={true}
-                    fieldValue={job} setFieldValue={setJob}
-                />
-                <Field inputType='text' fieldName='Imagem' placeholder='Informe o endereço da imagem'
-                    fieldValue={image} setFieldValue={setImage}
-                />
-                
-                <SelectionList fieldName='Times' list={teams} required={true}
-                    fieldValue={team} setFieldValue={setTeam}
-                />
+                    <TextField inputType='text' fieldName='Nome' placeholder='Digite seu nome' required={true}
+                        fieldValue={name} setFieldValue={setName}
+                    />
+                    <TextField inputType='text' fieldName='Cargo' placeholder='Digite seu cargo' required={true}
+                        fieldValue={job} setFieldValue={setJob}
+                    />
+                    <TextField inputType='text' fieldName='Imagem' placeholder='Informe o endereço da imagem'
+                        fieldValue={image} setFieldValue={setImage}
+                    />
+                    
+                    <SelectionList fieldName='Times' list={teams} required={true}
+                        fieldValue={team} setFieldValue={setTeam}
+                    />
 
-                <input className='submitBtn' type="submit" value='Criar card' />
-            </form>
-        </section>
+                    <input className='submitBtn' type="submit" value='Criar card' />
+                </form>
+            </section>
     )
 }
 
-const Field = (props) => {
 
-    const whenTyped = event => {
-        props.setFieldValue(event.target.value)
-    }
-
-    return (
-        <div>
-            <label>{props.fieldName}</label>
-            <input onChange={whenTyped} value={props.fieldValue} required={props.required} type={props.inputType} placeholder={props.placeholder} />
-        </div>
-    )
-}
