@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import hexToRgba from 'hex-to-rgba';
 import Banner from './components/Banner';
 import RegisterForm from './components/RegisterForm';
 import Team from './components/Teams'
@@ -45,8 +46,14 @@ function App() {
     }
   ])
 
-  const changeTeamColor = (name, mainColor, backgroundColor) => {
-    if (mainColor) {
+  const changeTeamColor = (name, mainColor, backgroundColor, switchColorMode) => {
+
+    if (!switchColorMode && mainColor) {
+      setTeams(
+        teams.map(team => team.name === name ? { ...team, mainColor: mainColor, backgroundColor: hexToRgba(mainColor, '0.6') } : team)
+      )
+    
+    } else if (mainColor) {
       setTeams(
         teams.map(team => team.name === name ? { ...team, mainColor: mainColor } : team)
       )
