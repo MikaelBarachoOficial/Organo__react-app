@@ -1,6 +1,18 @@
 .collaborator-card {
+    position: relative;
     width: 280px;
     text-align: center;
+}
+
+.collaborator-card .deleteButton {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+
+    cursor: pointer;
+    user-select: none;
+
+    color: #630707;
 }
 
 .collaborator-card__top {

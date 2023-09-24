@@ -7,7 +7,7 @@ import TabsField from './components/TabsField/TabsField';
 
 function App() {
 
-  const teams = [
+  const [teams, setTeams] = useState([
     {
       name: 'Programação',
       mainColor: '#57C278',
@@ -43,9 +43,29 @@ function App() {
       mainColor: '#FF8A29',
       backgroundColor: '#FFEEDF'
     }
-  ]
+  ])
 
-  const [collaborators, setCollaborators] = useState([])
+  const [collaborators, setCollaborators] = 
+  useState([
+    {
+      name: 'Mikael Baracho',
+      job: 'Desenvolvedor React',
+      image: 'https://github.com/MikaelBarachoOficial.png',
+      team: 'Programação'
+    },
+    {
+      name: 'Andressa Sales',
+      job: 'Desenvolvedora Front-End, React.js',
+      image: 'https://github.com/AndressaSales.png',
+      team: 'Front-End'
+    },
+    {
+      name: 'Mikael Baracho',
+      job: 'Exterminador de Bugs Master Blaster',
+      image: 'https://github.com/MikaelBarachoOficial.png',
+      team: 'Front-End'
+    }
+  ])
 
   const onCollaboratorRegistered = (collaborator) => {
     setCollaborators([...collaborators, collaborator])
@@ -58,6 +78,10 @@ function App() {
     console.log(value)
   }
 
+  const toDelete = () => {
+    console.log('deleting collaborator')
+  }
+
   return (
     <div className="App">
       <Banner />
@@ -66,7 +90,15 @@ function App() {
 
       {tabValue === 0 && <RegisterForm addNewCollaborator={collaborator => onCollaboratorRegistered(collaborator)} teams={teams.map(team => team.name)} />}
 
-      { teams.map((team, index) => <Team key={index} team={team} collaborators={collaborators.filter(collaborator => collaborator.team === team.name)} />)}
+      { teams.map((team, index) =>
+        
+        <Team 
+        key={index} 
+        team={team} 
+        collaborators={collaborators.filter(collaborator => collaborator.team === team.name)}
+        toDelete={toDelete}
+        />
+      )}
 
       <Footer />
     </div>

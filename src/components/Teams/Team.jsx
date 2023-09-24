@@ -1,7 +1,7 @@
 import { Collaborator } from '../Collaborator/Collaborator.jsx'
 import './Team.css'
 
-export const Team = ({team, collaborators}) => {
+export const Team = ({team, collaborators, toDelete}) => {
     return (
        collaborators.length > 0 && <section className='team' style={{backgroundColor: team.backgroundColor}}>
             <div className='team__title'>
@@ -10,10 +10,15 @@ export const Team = ({team, collaborators}) => {
             </div>
 
             <div className='team__collaborators'>
-                {collaborators.map((collaborator, index) => {
-                    console.log(<Collaborator key={index} collaborator={collaborator} teamColor={team.mainColor} />)
-             return   <Collaborator key={index} collaborator={collaborator} teamColor={team.mainColor} />
-                })}
+                {collaborators.map((collaborator, index) => 
+                    <Collaborator 
+                        key={index} 
+                        collaborator={collaborator} 
+                        teamColor={team.mainColor} 
+                        toDelete={toDelete}
+                        index={index}
+                    />
+                )}
             </div>
 
         </section>
