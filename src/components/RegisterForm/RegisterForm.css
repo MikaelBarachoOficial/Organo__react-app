@@ -7,19 +7,8 @@
     padding: 0.2em 0;
     margin: 2em 9em;
 
-    animation: openForm 1s ease-in-out;
+    animation: fadeIn 0.2s ease-in-out;
 }
-
-@keyframes openForm {
-    from {
-        max-height: 0;
-        opacity: 0;
-      }
-      to {
-        max-height: 100%;
-        opacity: 1;
-      }
-    }
 
 .field {
     width: 70%;

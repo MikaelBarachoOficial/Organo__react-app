@@ -4,15 +4,15 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import './TabsField.css'
 
-const TabsField = (props) => {
+const TabsField = ({tabChanged, collaborators}) => {
   const [value, setValue] = React.useState(0);
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-    props.tabChanged(newValue)
+  const handleChange = (_, newValue) => {
+    setValue(newValue)
+    tabChanged(newValue)
   };
 
-  const tabs = ['Criar Colaborador', 'Criar Time']
+  const tabs = ['Criar Colaborador', 'Criar Time', collaborators.length > 0 && 'Visualizar Times']
 
   return (
     <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>

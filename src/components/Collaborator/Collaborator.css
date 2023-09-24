@@ -15,6 +15,10 @@
     color: #630707;
 }
 
+.collaborator-card .deleteButton:hover {
+    color: #eb0101;
+}
+
 .collaborator-card__top {
     background-color:  #F0F0F0;
     border-radius: 10px 10px 0px 0px;

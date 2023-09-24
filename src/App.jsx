@@ -99,18 +99,17 @@ function App() {
     <div className="App">
       <Banner />
 
-      <TabsField tabChanged={tabValue => handleTabChange(tabValue)} />
+      <TabsField tabChanged={tabValue => handleTabChange(tabValue)} collaborators={collaborators}/>
 
       {tabValue === 0 && <RegisterForm addNewCollaborator={collaborator => onCollaboratorRegistered(collaborator)} teams={teams.map(team => team.name)} />}
 
-      { teams.map((team, index) =>
-        
+      {teams.map((team, index) =>
         <Team 
-        key={index} 
-        team={team} 
-        collaborators={collaborators.filter(collaborator => collaborator.team === team.name)}
-        toDeleteCollaborator={toDeleteCollaborator}
-        onChangeTeamColor={changeTeamColor}
+          key={index} 
+          team={team} 
+          collaborators={collaborators.filter(collaborator => collaborator.team === team.name)}
+          toDeleteCollaborator={toDeleteCollaborator}
+          onChangeTeamColor={changeTeamColor}
         />
       )}
 
