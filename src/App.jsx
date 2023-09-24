@@ -45,6 +45,19 @@ function App() {
     }
   ])
 
+  const changeTeamColor = (name, mainColor, backgroundColor) => {
+    if (mainColor) {
+      setTeams(
+        teams.map(team => team.name === name ? { ...team, mainColor: mainColor } : team)
+      )
+    
+    } else if (backgroundColor) {
+      setTeams(
+        teams.map(team => team.name === name ? { ...team, backgroundColor: backgroundColor } : team)
+      )
+    }
+  }
+
   const [collaborators, setCollaborators] = 
   useState([
     {
@@ -78,7 +91,7 @@ function App() {
     console.log(value)
   }
 
-  const toDelete = () => {
+  const toDeleteCollaborator = () => {
     console.log('deleting collaborator')
   }
 
@@ -96,7 +109,8 @@ function App() {
         key={index} 
         team={team} 
         collaborators={collaborators.filter(collaborator => collaborator.team === team.name)}
-        toDelete={toDelete}
+        toDeleteCollaborator={toDeleteCollaborator}
+        onChangeTeamColor={changeTeamColor}
         />
       )}
 

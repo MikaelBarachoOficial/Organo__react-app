@@ -1,5 +1,18 @@
 .team {
     padding: 2em;
+    position:relative
+}
+
+input.input_team-mainColor {
+    position: absolute;
+    top: 15px;
+    right: 100px;
+}
+
+input.input_team-backgroundColor {
+    position: absolute;
+    top: 15px;
+    right: 30px;
 }
 
 .team__title {
