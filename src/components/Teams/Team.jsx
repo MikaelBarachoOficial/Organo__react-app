@@ -10,7 +10,10 @@ export const Team = ({team, collaborators}) => {
             </div>
 
             <div className='team__collaborators'>
-                {collaborators.map((collaborator, index) => <Collaborator key={index} collaborator={collaborator} teamColor={team.mainColor} />)}
+                {collaborators.map((collaborator, index) => {
+                    console.log(<Collaborator key={index} collaborator={collaborator} teamColor={team.mainColor} />)
+             return   <Collaborator key={index} collaborator={collaborator} teamColor={team.mainColor} />
+                })}
             </div>
 
         </section>

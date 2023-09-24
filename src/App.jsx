@@ -3,6 +3,7 @@ import Banner from './components/Banner';
 import RegisterForm from './components/RegisterForm';
 import Team from './components/Teams'
 import Footer from './components/Footer';
+import TabsField from './components/TabsField/TabsField';
 
 function App() {
 
@@ -50,11 +51,20 @@ function App() {
     setCollaborators([...collaborators, collaborator])
   }
 
+  const [tabValue, setTabValue] = useState(0)
+
+  const handleTabChange = (value) => {
+    setTabValue(value)
+    console.log(value)
+  }
+
   return (
     <div className="App">
       <Banner />
 
-      <RegisterForm addNewCollaborator={collaborator => onCollaboratorRegistered(collaborator)} teams={teams.map(team => team.name)} />
+      <TabsField tabChanged={tabValue => handleTabChange(tabValue)} />
+
+      {tabValue === 0 && <RegisterForm addNewCollaborator={collaborator => onCollaboratorRegistered(collaborator)} teams={teams.map(team => team.name)} />}
 
       { teams.map((team, index) => <Team key={index} team={team} collaborators={collaborators.filter(collaborator => collaborator.team === team.name)} />)}
 
@@ -64,4 +74,3 @@ function App() {
 }
 
 export default App;
-
