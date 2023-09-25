@@ -50,7 +50,7 @@ function App() {
 
     if (!switchColorMode && mainColor) {
       setTeams(
-        teams.map(team => team.name === name ? { ...team, mainColor: mainColor, backgroundColor: hexToRgba(mainColor, '0.6') } : team)
+        teams.map(team => team.name === name ? { ...team, mainColor: mainColor, backgroundColor: hexToRgba(mainColor, '0.5') } : team)
       )
     
     } else if (mainColor) {
@@ -95,7 +95,6 @@ function App() {
 
   const handleTabChange = (value) => {
     setTabValue(value)
-    console.log(value)
   }
 
   const toDeleteCollaborator = () => {

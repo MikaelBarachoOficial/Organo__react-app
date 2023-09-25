@@ -6,10 +6,8 @@ export const Switch = (props) => {
     const [activated, setActivated] = useState(false)
 
     const switched = () => {
-        console.log('switched')
         setActivated(!activated)
         props.onSwitch()
-
     }
 
     return (
