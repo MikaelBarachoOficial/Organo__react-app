@@ -6,6 +6,7 @@
 
 This project was developed using the following technologies:
 
+> - React.js
 > - HTML and CSS
 > - JavaScript
 > - Git and Github
