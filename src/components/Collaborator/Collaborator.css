@@ -2,6 +2,13 @@
     position: relative;
     width: 280px;
     text-align: center;
+
+    transition: transform 0.2s ease;
+}
+
+.collaborator-card:hover .collaborator-card__top img {
+    transform: scale(1.03);
+    transition: transform 0.2s ease;
 }
 
 .collaborator-card .deleteButton {
@@ -23,11 +30,14 @@
     background-color:  #F0F0F0;
     border-radius: 10px 10px 0px 0px;
 }
+
 .collaborator-card__top img {
     width: 100px;
     border-radius: 50%;
     position: relative;
     bottom: -50px;
+
+    transition: transform 0.3s ease;
 }
 
 .collaborator-card__bottom {

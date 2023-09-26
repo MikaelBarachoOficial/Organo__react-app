@@ -47,22 +47,15 @@ function App() {
   ])
 
   const changeTeamColor = (name, mainColor, backgroundColor, switchColorMode) => {
-
-    if (!switchColorMode && mainColor) {
-      setTeams(
-        teams.map(team => team.name === name ? { ...team, mainColor: mainColor, backgroundColor: hexToRgba(mainColor, '0.5') } : team)
+    setTeams(
+      teams.map(team => 
+        team.name === name ? { 
+          ...team, 
+          mainColor: mainColor ? mainColor : team.mainColor,
+          backgroundColor: !switchColorMode && mainColor ? hexToRgba(mainColor, '0.5') : backgroundColor ? backgroundColor : team.backgroundColor
+        } : team
       )
-    
-    } else if (mainColor) {
-      setTeams(
-        teams.map(team => team.name === name ? { ...team, mainColor: mainColor } : team)
-      )
-    
-    } else if (backgroundColor) {
-      setTeams(
-        teams.map(team => team.name === name ? { ...team, backgroundColor: backgroundColor } : team)
-      )
-    }
+    )
   }
 
   const [collaborators, setCollaborators] = 
