@@ -11,7 +11,7 @@ export const TeamRegisterForm = (props) => {
 
     const [name, setName] = useState('')
     const [mainColor, setMainColor] = useState('#000000')
-    const [team, setTeam] = useState(teams[0])
+    const [teamSelected, setTeam] = useState(teams[0])
 
     const submitCreateForm = event => {
         event.preventDefault()
@@ -31,12 +31,16 @@ export const TeamRegisterForm = (props) => {
     }
 
     const submitDeleteForm = event => {
-        event.preventDefault()
-
-        props.deleteTeam(team)
-        
-        setTeam(teams[0])
-
+        event.preventDefault();
+    
+        const teamToDelete = teams.find(team => team === teamSelected);
+        if (teamToDelete) {
+            props.deleteTeam(teamToDelete);
+            const remainingTeams = teams.filter(team => team !== teamSelected);
+            setTeam(remainingTeams[0]);
+        } else {
+            console.error(`Team not found: ${teamSelected}`);
+        }
     }
 
     return (
@@ -49,8 +53,12 @@ export const TeamRegisterForm = (props) => {
                         fieldValue={name} setFieldValue={setName} inputClass='textField__input-text'
                     />
                     
-                    <TextField inputType='color' fieldName='Cor principal do time (editável)'
-                        fieldValue={mainColor} setFieldValue={setMainColor} inputClass='textField__input-color'
+                    <TextField 
+                        inputType='color' 
+                        fieldName='Cor principal do time (editável)'
+                        fieldValue={mainColor || '#000000'} // if mainColor is an empty string, use black as a default
+                        setFieldValue={setMainColor} 
+                        inputClass='textField__input-color'
                     />
 
                     <input className='submitBtn' type="submit" value='Criar time' />
@@ -61,7 +69,7 @@ export const TeamRegisterForm = (props) => {
                     <h3>Escolha o time que deseja excluir</h3>
 
                     <SelectionList fieldName='Times' list={teams} required={true}
-                        fieldValue={team} setFieldValue={setTeam}
+                        fieldValue={teamSelected} setFieldValue={setTeam}
                     />
 
                     <input className='deleteBtn' type="submit" value='Excluir time' />

@@ -13,7 +13,7 @@ const SelectionList = (props) => {
             <label>{props.fieldName}</label>
             <select onChange={whenChanged} value={props.fieldValue} required={props.required}>
                 {/* <option hidden disabled selected > -- Selecione uma opção -- </option> */}
-                { list.map(item => <option key={item}>{item}</option>) }
+                { list.map((item, index) => <option key={index}>{item}</option>) }
             </select>
         </div>
     )

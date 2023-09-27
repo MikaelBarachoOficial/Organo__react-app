@@ -91,11 +91,15 @@ function App() {
   ])
 
   const onRegistered = (collaborator, team) => {
-    collaborator ? setCollaborators([...collaborators, collaborator]) :
+    collaborator && setCollaborators([...collaborators, collaborator])
     team && setTeams([...teams, team]) 
   }
 
-  const onDeleteTeam = (teamDeleted) => setTeams(teams.filter(team => team.name !== teamDeleted))
+  const onDeleteTeam = (teamDeleted) => {
+    setTeams(teams.filter(team => team.name !== teamDeleted))
+    setCollaborators(collaborators.filter(collaborator => collaborator.team !== teamDeleted))
+    debugger
+  }
 
   const [tabValue, setTabValue] = useState(0)
 
