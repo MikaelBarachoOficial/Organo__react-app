@@ -35,7 +35,7 @@ input.input_team-backgroundColor {
 
 }
 
-.team__title h3 {
+.team__title h3, .noTeams p {
     font-family: var(--titles-font);
     font-weight: 400;
     font-size: 2rem;
@@ -61,4 +61,9 @@ input.input_team-backgroundColor {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1.5em;
+}
+
+.noTeams {
+    text-align: center;
+    padding: 8em 0;
 }

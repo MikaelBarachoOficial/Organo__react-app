@@ -4,7 +4,7 @@ import CancelSharpIcon from '@mui/icons-material/CancelSharp';
 export const Collaborator = (props) => {
     return (
         <div className='collaborator-card'>
-            <CancelSharpIcon className='deleteButton' onClick={() => props.toDelete()} />
+            <CancelSharpIcon className='deleteButton' onClick={() => props.toDelete(props.collaborator.id)} />
             <div className='collaborator-card__top' style={{backgroundColor: props.teamColor}}>
                 <img 
                     src={props.collaborator.image}

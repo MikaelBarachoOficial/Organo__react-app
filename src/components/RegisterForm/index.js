@@ -1,3 +1,4 @@
 import { RegisterForm } from "./RegisterForm";
+import { TeamRegisterForm } from "./TeamRegisterForm"
 
-export default RegisterForm;
+export { RegisterForm, TeamRegisterForm };

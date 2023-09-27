@@ -1,3 +1,3 @@
-import { Team } from "./Team";
+import { Team, NoTeam } from "./Team";
 
-export default Team;
+export { Team, NoTeam };

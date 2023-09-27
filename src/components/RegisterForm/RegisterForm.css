@@ -24,13 +24,13 @@
     margin-bottom: 1em;
 }
 
-.field .submitBtn {
-    background-color: #6278F7;
+.field .submitBtn, .field .deleteBtn {
     border-radius: 10px;
+    border: none;
 
     text-align: center;
     padding: 1.5em;
-    width: 8em;
+    /* width: 8em; */
 
     margin-top: 2em;
     margin-bottom: 1.5em;
@@ -44,8 +44,24 @@
     transition: 0.1s;
 }
 
+.field .submitBtn {
+    background-color: #6278F7;
+}
+
 .field .submitBtn:hover {
     background-color:#4f68f0;
+}
+
+.field .deleteBtn {
+    background-color:#c00606;
+}
+
+.field .deleteBtn:hover {
+    background-color:#b30404;
+}
+
+.form hr {
+    margin: 3em 0;
 }
 
 @media screen and (max-width: 744px) {

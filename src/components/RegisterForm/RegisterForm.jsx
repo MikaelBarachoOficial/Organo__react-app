@@ -1,7 +1,8 @@
 import './RegisterForm.css'
+import { TextField } from '../TextField/TextField'
 import SelectionList from '../SelectionList/SelectionList'
 import { useState } from 'react'
-import { TextField } from '../TextField/TextField'
+import { v4 as uuidv4 } from 'uuid';
 
 export const RegisterForm = (props) => {
 
@@ -16,6 +17,7 @@ export const RegisterForm = (props) => {
         event.preventDefault()
 
         const collaborator = {
+            id: uuidv4(),
             name,
             job,
             image,
@@ -37,13 +39,13 @@ export const RegisterForm = (props) => {
                     <h3>Preencha os dados para criar o card do colaborador.</h3>
 
                     <TextField inputType='text' fieldName='Nome' placeholder='Digite seu nome' required={true}
-                        fieldValue={name} setFieldValue={setName}
+                        fieldValue={name} setFieldValue={setName} inputClass='textField__input-text'
                     />
                     <TextField inputType='text' fieldName='Cargo' placeholder='Digite seu cargo' required={true}
-                        fieldValue={job} setFieldValue={setJob}
+                        fieldValue={job} setFieldValue={setJob} inputClass='textField__input-text'
                     />
                     <TextField inputType='text' fieldName='Imagem' placeholder='Informe o endereço da imagem'
-                        fieldValue={image} setFieldValue={setImage}
+                        fieldValue={image} setFieldValue={setImage} inputClass='textField__input-text'
                     />
                     
                     <SelectionList fieldName='Times' list={teams} required={true}
