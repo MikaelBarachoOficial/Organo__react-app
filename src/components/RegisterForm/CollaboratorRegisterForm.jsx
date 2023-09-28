@@ -4,7 +4,7 @@ import SelectionList from '../SelectionList/SelectionList'
 import { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid';
 
-export const RegisterForm = (props) => {
+export const CollaboratorRegisterForm = (props) => {
 
     const teams = props.teams
 

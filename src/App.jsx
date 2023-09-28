@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import hexToRgba from 'hex-to-rgba';
 import Banner from './components/Banner';
-import { RegisterForm, TeamRegisterForm } from './components/RegisterForm';
+import { CollaboratorRegisterForm, TeamRegisterForm } from './components/RegisterForm';
 import { Team, NoTeam } from './components/Teams';
 import Footer from './components/Footer';
 import TabsField from './components/TabsField/TabsField';
@@ -120,7 +120,7 @@ function App() {
 
       <TabsField tabChanged={tabValue => handleTabChange(tabValue)} />
 
-      {tabValue === 0 && <RegisterForm
+      {tabValue === 0 && <CollaboratorRegisterForm
         addNewCollaborator={collaborator => onRegistered(collaborator)}
         teams={teams.map(team => team.name)}
       />}
