@@ -55,7 +55,7 @@ export const RegisterForm = (props) => {
                 />
 
                 <FormFieldInput
-                    ieldName='Imagem'
+                    fieldName='Imagem'
                     placeholder='Informe o endereço da imagem'
                     fieldValue={image}
                     setFieldValue={setImage}

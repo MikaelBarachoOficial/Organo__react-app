@@ -127,17 +127,14 @@ function App() {
         deleteTeam={team => onDeleteTeam(team)}
       />}
 
-      {teams.map((team, index) =>
+      {collaborators.length > 0 ? teams.map((team, index) =>
         <Team
           key={index}
           team={team}
           collaborators={collaborators.filter(collaborator => collaborator.team === team.name)}
           toDeleteCollaborator={toDeleteCollaborator}
           onChangeTeamColor={changeTeamColor}
-        />
-      )}
-
-      {collaborators < 1 && <NoTeam />}
+        />) : <NoTeam />}
 
       <Footer />
     </div>

@@ -5,7 +5,9 @@
 🌟 Organo: Your Ultimate Team Organizer 🌟
 
 📜 Project Description:
-Introducing Organo, your go-to team organizer for both company and independent projects! 🚀 Organo simplifies team collaboration, registration, and management, providing an intuitive and visually appealing platform.
+Introducing Organo, your go-to team organizer for both company and independent projects! 
+
+🚀 Organo simplifies team collaboration, registration, and management, providing an intuitive and visually appealing platform.
 
 ## 🚀 Technologies
 
@@ -25,17 +27,15 @@ This project was developed using the following technologies:
 
 🎨 Custom Team Colors: Personalize your teams with unique main and background colors. Make each team stand out and create a vibrant workspace.
 
+🔁 Color Mode Switch: Toggle between simple and advanced color modes for precise team color customization.
+
 🗑️ Team Deletion: Need to remove a team? No worries! Deleting a team is a breeze, and Organo takes care of reassigning affected collaborators.
 
 🔄 Real-Time Updates: All changes, from adding collaborators to updating team colors, are reflected in real-time, ensuring a smooth collaborative experience.
 
-🖼️ Collaborator Images: Customize profiles with images, making it easier to recognize team members and add a personal touch.
+🖼️ Collaborator Images with Default Option: Customize profiles with images to enhance recognition and add a personal touch. In case of missing images or errors, Organo gracefully displays a default picture to maintain visual consistency.
 
 🎯 Tabbed Interface: Navigate effortlessly between tabs - create collaborators, manage teams, and visualize your teams' compositions.
-
-🔁 Color Mode Switch: Toggle between simple and advanced color modes for precise team color customization.
-
-🧹 Teamless Indicator: If there are no collaborators in a team, Organo gracefully displays a "No Team" message.
 
 🧰 Tech Stack:
 Organo is powered by React.js, a versatile JavaScript library for building user interfaces. It also leverages Material-UI components for a polished and responsive design.

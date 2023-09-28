@@ -1,6 +1,6 @@
 import './FormFieldInput.css'
 
-export const FormFieldInput = ({ inputType = 'text', inputClass = 'textField__input-text', ...props }) => {
+export const FormFieldInput = ({ inputType = 'text', ...props }) => {
 
     const whenTyped = event => {
         props.setFieldValue(event.target.value);
@@ -8,11 +8,11 @@ export const FormFieldInput = ({ inputType = 'text', inputClass = 'textField__in
 
     return (
         <div>
-            
+
             <label className='textField__label'>{props.fieldName}</label>
 
             <input
-                className={inputClass}
+                className={`textField__input-${inputType}`}
                 onChange={whenTyped}
                 value={props.fieldValue}
                 required={props.required}

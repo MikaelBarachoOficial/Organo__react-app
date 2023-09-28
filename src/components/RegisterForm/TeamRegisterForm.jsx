@@ -62,7 +62,6 @@ export const TeamRegisterForm = (props) => {
                     fieldName='Cor principal do time (editável)'
                     fieldValue={mainColor || '#000000'} // if mainColor is an empty string, use black as a default
                     setFieldValue={setMainColor}
-                    inputClass='textField__input-color'
                 />
 
                 <input className='submitBtn' type="submit" value='Criar time' />
