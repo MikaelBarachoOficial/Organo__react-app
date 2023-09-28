@@ -90,6 +90,10 @@ function App() {
     }
   ])
 
+  const onFavoriteCollaborator = (id) => {
+    setCollaborators(collaborators.map(collaborator => collaborator.id === id ? {...collaborator, favorited: !collaborator.favorited}: collaborator ))
+  }
+
   const onRegistered = (collaborator, team) => {
     collaborator && setCollaborators([...collaborators, collaborator])
     team && setTeams([...teams, team])
@@ -134,6 +138,7 @@ function App() {
           collaborators={collaborators.filter(collaborator => collaborator.team === team.name)}
           toDeleteCollaborator={toDeleteCollaborator}
           onChangeTeamColor={changeTeamColor}
+          onFavoriteCollaborator={onFavoriteCollaborator}
         />) : <NoTeam />}
 
       <Footer />

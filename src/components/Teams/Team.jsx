@@ -3,7 +3,7 @@ import { Switch } from '../Switch/Switch.jsx'
 import { useState } from 'react'
 import './Team.css'
 
-export const Team = ({team, collaborators, toDeleteCollaborator, onChangeTeamColor}) => {
+export const Team = ({team, collaborators, toDeleteCollaborator, onChangeTeamColor, onFavoriteCollaborator}) => {
 
     const [switchColorMode, setSwitchColorMode] = useState(false)
     const onSwitchColorMode = () => {
@@ -28,6 +28,7 @@ export const Team = ({team, collaborators, toDeleteCollaborator, onChangeTeamCol
                         teamColor={team.mainColor} 
                         toDelete={toDeleteCollaborator}
                         index={index}
+                        onFavorite={onFavoriteCollaborator}
                     />
                 )}
             </div>
