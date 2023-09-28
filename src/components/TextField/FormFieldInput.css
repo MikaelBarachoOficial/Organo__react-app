@@ -1,0 +1,54 @@
+.textField__label {
+    font-family: var(--text-font);
+    font-weight: 600;
+    font-size: 1.125rem;
+}
+
+.textField__input-text {
+    display: block;
+    width: 100%;
+    margin-top: 0.5em;
+    margin-bottom: 2em;
+
+    border: none;
+    padding: 2em;
+    
+    box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.06);
+
+    font-family: var(--text-font);
+    font-weight: 400;
+    font-size: 1rem;
+
+    box-sizing: border-box;
+
+}
+
+.textField__input-color {
+    display: block;
+    
+    margin-top: 0.5em;
+    margin-bottom: 2em;
+
+    height: 3em;
+    width: 5em;
+   
+    cursor: pointer;
+    
+    box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.06);
+
+    font-family: var(--text-font);
+    font-weight: 400;
+    font-size: 1rem;
+
+    box-sizing: border-box;
+
+}
+
+.textField__input::placeholder {
+
+        font-family: var(--text-font);
+        font-weight: 400;
+        font-size: 1rem;
+    
+    
+}

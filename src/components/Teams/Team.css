@@ -1,5 +1,32 @@
 .team {
     padding: 2em;
+    padding-top: 3em;
+    position: relative;
+}
+
+.colorMode-switch {
+    position: absolute;
+    top: 3px;
+    right: 160px;
+
+    display: flex;
+    align-items: center;
+}
+
+input.input_team-mainColor {
+    position: absolute;
+    top: 15px;
+    right: 100px;
+    
+    cursor: pointer;
+}
+
+input.input_team-backgroundColor {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    
+    cursor: pointer;
 }
 
 .team__title {
@@ -8,7 +35,7 @@
 
 }
 
-.team__title h3 {
+.team__title h3, .noTeams p {
     font-family: var(--titles-font);
     font-weight: 400;
     font-size: 2rem;
@@ -34,4 +61,9 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 1.5em;
+}
+
+.noTeams {
+    text-align: center;
+    padding: 8em 0;
 }

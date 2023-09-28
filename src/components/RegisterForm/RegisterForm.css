@@ -5,21 +5,10 @@
     /* border: #d0cfcf solid 1px; */
 
     padding: 0.2em 0;
-    margin: 4em 9em;
+    margin: 2em 9em;
 
-    animation: openForm 1s ease-in-out;
+    animation: fadeIn 0.2s ease-in-out;
 }
-
-@keyframes openForm {
-    from {
-        max-height: 0;
-        opacity: 0;
-      }
-      to {
-        max-height: 100%;
-        opacity: 1;
-      }
-    }
 
 .field {
     width: 70%;
@@ -35,51 +24,13 @@
     margin-bottom: 1em;
 }
 
-.field label {
-    font-family: var(--text-font);
-    font-weight: 600;
-    font-size: 1.125rem;
-
-}
-
-.field input, .field select{
-    display: block;
-    width: 100%;
-    margin-top: 0.5em;
-    margin-bottom: 2em;
-
-    border: none;
-    padding: 2em;
-    
-    box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.06);
-
-    font-family: var(--text-font);
-    font-weight: 400;
-    font-size: 1rem;
-
-    box-sizing: border-box;
-
-}
-
-.field select {
-    cursor: pointer;
-    
-    
-}
-
-.field input::placeholder {
-    font-family: var(--text-font);
-    font-weight: 400;
-    font-size: 1rem;
-}
-
-.field .submitBtn {
-    background-color: #6278F7;
+.field .submitBtn, .field .deleteBtn {
     border-radius: 10px;
+    border: none;
 
     text-align: center;
     padding: 1.5em;
-    width: 8em;
+    /* width: 8em; */
 
     margin-top: 2em;
     margin-bottom: 1.5em;
@@ -93,8 +44,24 @@
     transition: 0.1s;
 }
 
+.field .submitBtn {
+    background-color: #6278F7;
+}
+
 .field .submitBtn:hover {
     background-color:#4f68f0;
+}
+
+.field .deleteBtn {
+    background-color:#c00606;
+}
+
+.field .deleteBtn:hover {
+    background-color:#b30404;
+}
+
+.form hr {
+    margin: 3em 0;
 }
 
 @media screen and (max-width: 744px) {

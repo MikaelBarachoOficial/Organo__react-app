@@ -1,3 +1,4 @@
-import { RegisterForm } from "./RegisterForm";
+import { CollaboratorRegisterForm } from "./CollaboratorRegisterForm";
+import { TeamRegisterForm } from "./TeamRegisterForm"
 
-export default RegisterForm;
+export { CollaboratorRegisterForm, TeamRegisterForm };

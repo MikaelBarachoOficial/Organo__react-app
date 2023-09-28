@@ -1,0 +1,75 @@
+.switch {
+    position: relative;
+    width: 70px;
+    margin: 1.2em auto;
+
+}
+
+.switch button {
+    height: 20px;
+    width: 20px;
+    background: #BDBDBD;
+    border: black 1px solid;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.20);
+
+    position: absolute;
+    z-index: 1;
+    
+    left: 18%;
+    top: 50%;
+    transform: translateY(-50%);
+
+    animation: switch_slide-out 0.25s;
+
+}
+
+.switch.activated button {
+    /* left: initial;
+    right: 0; */
+
+    background: #9baafd;
+    animation: switch_slide-in 0.25s forwards;
+}
+
+.switch span {
+    display: block;
+    margin: 0 auto;
+
+    width: 40px;
+    height: 14px;
+    
+    border-radius: 9999px;
+    border: 1px solid rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.099);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    cursor: pointer;
+
+}
+
+@keyframes switch_slide-in {
+    
+    from {
+        left: 18%;
+    }
+
+    to {
+        left: 52%;
+    }
+
+}
+
+@keyframes switch_slide-out {
+
+    from {
+        left: 52%;
+    }
+
+    to {
+        left: 18%;
+    }
+
+} 

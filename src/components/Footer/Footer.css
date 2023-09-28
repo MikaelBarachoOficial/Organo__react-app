@@ -1,5 +1,5 @@
 footer {
-    background: var(--main-color) url(/public/images/background.png) no-repeat;
+    background: var(--main-color) url(/public/images/background.png) repeat-x;
 
     display: flex;
     align-items: center;
