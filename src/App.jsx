@@ -56,9 +56,9 @@ function App() {
 
   const changeTeamColor = (id, mainColor, backgroundColor, switchColorMode) => {
     setTeams(
-      teams.map(team => 
-        team.id === id ? { 
-          ...team, 
+      teams.map(team =>
+        team.id === id ? {
+          ...team,
           mainColor: mainColor ? mainColor : team.mainColor,
           backgroundColor: !switchColorMode && mainColor ? hexToRgba(mainColor, '0.5') : backgroundColor ? backgroundColor : team.backgroundColor
         } : team
@@ -92,13 +92,12 @@ function App() {
 
   const onRegistered = (collaborator, team) => {
     collaborator && setCollaborators([...collaborators, collaborator])
-    team && setTeams([...teams, team]) 
+    team && setTeams([...teams, team])
   }
 
   const onDeleteTeam = (teamDeleted) => {
     setTeams(teams.filter(team => team.name !== teamDeleted))
     setCollaborators(collaborators.filter(collaborator => collaborator.team !== teamDeleted))
-    debugger
   }
 
   const [tabValue, setTabValue] = useState(0)
@@ -129,9 +128,9 @@ function App() {
       />}
 
       {teams.map((team, index) =>
-        <Team 
-          key={index} 
-          team={team} 
+        <Team
+          key={index}
+          team={team}
           collaborators={collaborators.filter(collaborator => collaborator.team === team.name)}
           toDeleteCollaborator={toDeleteCollaborator}
           onChangeTeamColor={changeTeamColor}

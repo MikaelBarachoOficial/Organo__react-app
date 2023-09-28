@@ -1,5 +1,5 @@
 import './RegisterForm.css'
-import { TextField } from '../TextField/TextField'
+import { FormFieldInput } from '../TextField/FormFieldInput'
 import SelectionList from '../SelectionList/SelectionList'
 import { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid';
@@ -30,31 +30,48 @@ export const RegisterForm = (props) => {
         setTeam(teams[0])
 
         props.addNewCollaborator(collaborator)
-        
+
     }
 
     return (
-            <section className="form">
-                <form className='field' onSubmit={submitForm}>
-                    <h3>Preencha os dados para criar o card do colaborador.</h3>
+        <section className="form">
+            <form className='field' onSubmit={submitForm}>
+                <h3>Preencha os dados para criar o card do colaborador.</h3>
 
-                    <TextField inputType='text' fieldName='Nome' placeholder='Digite seu nome' required={true}
-                        fieldValue={name} setFieldValue={setName} inputClass='textField__input-text'
-                    />
-                    <TextField inputType='text' fieldName='Cargo' placeholder='Digite seu cargo' required={true}
-                        fieldValue={job} setFieldValue={setJob} inputClass='textField__input-text'
-                    />
-                    <TextField inputType='text' fieldName='Imagem' placeholder='Informe o endereço da imagem'
-                        fieldValue={image} setFieldValue={setImage} inputClass='textField__input-text'
-                    />
-                    
-                    <SelectionList fieldName='Times' list={teams} required={true}
-                        fieldValue={team} setFieldValue={setTeam}
-                    />
+                <FormFieldInput
+                    fieldName='Nome'
+                    placeholder='Digite seu nome'
+                    fieldValue={name}
+                    setFieldValue={setName}
+                    required
+                />
 
-                    <input className='submitBtn' type="submit" value='Criar card' />
-                </form>
-            </section>
+                <FormFieldInput
+                    fieldName='Cargo'
+                    placeholder='Digite seu cargo'
+                    fieldValue={job}
+                    setFieldValue={setJob}
+                    required
+                />
+
+                <FormFieldInput
+                    ieldName='Imagem'
+                    placeholder='Informe o endereço da imagem'
+                    fieldValue={image}
+                    setFieldValue={setImage}
+                />
+
+                <SelectionList
+                    fieldName='Times'
+                    list={teams}
+                    fieldValue={team}
+                    setFieldValue={setTeam}
+                    required
+                />
+
+                <input className='submitBtn' type="submit" value='Criar card' />
+            </form>
+        </section>
     )
 }
 

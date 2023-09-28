@@ -1,5 +1,5 @@
 import './RegisterForm.css'
-import { TextField } from '../TextField/TextField'
+import { FormFieldInput } from '../TextField/FormFieldInput'
 import SelectionList from '../SelectionList/SelectionList'
 import { useState } from 'react'
 import hexToRgba from 'hex-to-rgba';
@@ -27,12 +27,12 @@ export const TeamRegisterForm = (props) => {
         setMainColor('')
 
         props.addNewTeam(newTeam)
-        
+
     }
 
     const submitDeleteForm = event => {
         event.preventDefault();
-    
+
         const teamToDelete = teams.find(team => team === teamSelected);
         if (teamToDelete) {
             props.deleteTeam(teamToDelete);
@@ -44,37 +44,44 @@ export const TeamRegisterForm = (props) => {
     }
 
     return (
-            <section className="form">
-                <form className='field' onSubmit={submitCreateForm}>
+        <section className="form">
+            <form className='field' onSubmit={submitCreateForm}>
 
-                    <h3>Preencha os dados para criar o novo time.</h3>
+                <h3>Preencha os dados para criar o novo time.</h3>
 
-                    <TextField inputType='text' fieldName='Nome do time' placeholder='Digite o nome do time' required={true}
-                        fieldValue={name} setFieldValue={setName} inputClass='textField__input-text'
-                    />
-                    
-                    <TextField 
-                        inputType='color' 
-                        fieldName='Cor principal do time (editável)'
-                        fieldValue={mainColor || '#000000'} // if mainColor is an empty string, use black as a default
-                        setFieldValue={setMainColor} 
-                        inputClass='textField__input-color'
-                    />
+                <FormFieldInput
+                    fieldName='Nome do time'
+                    placeholder='Digite o nome do time'
+                    fieldValue={name}
+                    setFieldValue={setName}
+                    required
+                />
 
-                    <input className='submitBtn' type="submit" value='Criar time' />
-                </form>
-                <hr />
-                <form className='field' onSubmit={submitDeleteForm}>
+                <FormFieldInput
+                    inputType='color'
+                    fieldName='Cor principal do time (editável)'
+                    fieldValue={mainColor || '#000000'} // if mainColor is an empty string, use black as a default
+                    setFieldValue={setMainColor}
+                    inputClass='textField__input-color'
+                />
 
-                    <h3>Escolha o time que deseja excluir</h3>
+                <input className='submitBtn' type="submit" value='Criar time' />
+            </form>
+            <hr />
+            <form className='field' onSubmit={submitDeleteForm}>
 
-                    <SelectionList fieldName='Times' list={teams} required={true}
-                        fieldValue={teamSelected} setFieldValue={setTeam}
-                    />
+                <h3>Escolha o time que deseja excluir</h3>
 
-                    <input className='deleteBtn' type="submit" value='Excluir time' />
+                <SelectionList
+                    fieldName='Times'
+                    list={teams} required
+                    fieldValue={teamSelected}
+                    setFieldValue={setTeam}
+                />
 
-                </form>
-            </section>
+                <input className='deleteBtn' type="submit" value='Excluir time' />
+
+            </form>
+        </section>
     )
 } 

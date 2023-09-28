@@ -1,6 +1,6 @@
-import './TextField.css'
+import './FormFieldInput.css'
 
-export const TextField = (props) => {
+export const FormFieldInput = ({ inputType = 'text', inputClass = 'textField__input-text', ...props }) => {
 
     const whenTyped = event => {
         props.setFieldValue(event.target.value);
@@ -8,14 +8,15 @@ export const TextField = (props) => {
 
     return (
         <div>
+            
             <label className='textField__label'>{props.fieldName}</label>
 
             <input
-                className={props.inputClass}
+                className={inputClass}
                 onChange={whenTyped}
                 value={props.fieldValue}
                 required={props.required}
-                type={props.inputType}
+                type={inputType}
                 placeholder={props.placeholder}
             />
 
