@@ -64,6 +64,12 @@
     margin: 3em 0;
 }
 
+.field p {
+    margin: 1em;
+    font-family: var(--text-font);
+    color: red;
+}
+
 @media screen and (max-width: 744px) {
     .form {
         margin: 4em 1em;

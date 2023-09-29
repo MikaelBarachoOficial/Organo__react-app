@@ -53,7 +53,13 @@ input.input_team-backgroundColor {
 
     margin-top: 0.5em;
     margin-bottom: 2.7em;
+    transition: width 0.3s ease-in-out;
 }
+
+.team:hover .team__title hr {
+    width: 6em;
+    transition: width 0.3s ease-in-out;
+}    
 
 .team__collaborators {
     display: flex;

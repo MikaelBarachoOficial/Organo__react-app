@@ -97,6 +97,7 @@ function App() {
   const onRegistered = (collaborator, team) => {
     collaborator && setCollaborators([...collaborators, collaborator])
     team && setTeams([...teams, team])
+    debugger
   }
 
   const onDeleteTeam = (teamDeleted) => {
@@ -127,7 +128,7 @@ function App() {
 
       {tabValue === 1 && <TeamRegisterForm
         addNewTeam={team => onRegistered(undefined, team)}
-        teams={teams.map(team => team.name)}
+        teams={teams}
         deleteTeam={team => onDeleteTeam(team)}
       />}
 

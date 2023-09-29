@@ -7,7 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 export const TeamRegisterForm = (props) => {
 
-    const teams = props.teams
+    const teams = props.teams.map(team => team.name)
 
     const [name, setName] = useState('')
     const [mainColor, setMainColor] = useState('#000000')
@@ -33,14 +33,18 @@ export const TeamRegisterForm = (props) => {
     const submitDeleteForm = event => {
         event.preventDefault();
 
-        const teamToDelete = teams.find(team => team === teamSelected);
-        if (teamToDelete) {
-            props.deleteTeam(teamToDelete);
-            const remainingTeams = teams.filter(team => team !== teamSelected);
-            setTeam(remainingTeams[0]);
-        } else {
-            console.error(`Team not found: ${teamSelected}`);
+        if (teams.length > 1) {
+            const teamToDelete = teams.find(team => team === teamSelected)
+            if (teamToDelete) {
+                props.deleteTeam(teamToDelete);
+                const remainingTeams = teams.filter(team => team !== teamSelected)
+                setTeam(remainingTeams[0]);
+            } else {
+                console.error(`Team not found: ${teamSelected}`);
+            }
+
         }
+
     }
 
     return (
@@ -73,10 +77,12 @@ export const TeamRegisterForm = (props) => {
 
                 <SelectionList
                     fieldName='Times'
-                    list={teams} required
+                    list={teams}
+                    required
                     fieldValue={teamSelected}
                     setFieldValue={setTeam}
                 />
+                {teams.length < 2 && <p>Não pode haver menos de 1 time registrado.</p>}
 
                 <input className='deleteBtn' type="submit" value='Excluir time' />
 
